@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Site</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    /* Giriş Efekti */
+    #intro {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      background-color: red;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+    }
+    #intro h1 {
+      font-size: 150px;
+      color: white;
+      font-family: Arial, sans-serif;
+      animation: fadeInOut 3s forwards;
+    }
+    @keyframes fadeInOut {
+      0% { opacity: 0; transform: scale(0.5); }
+      50% { opacity: 1; transform: scale(1); }
+      100% { opacity: 0; transform: scale(1.5); }
+    }
+    /* Arkaplan */
+    #content {
+      display: none;
+      background: url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+    /* Sekmeler */
+    nav {
+      background-color: black;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      margin: 0 15px;
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+    nav a:hover {
+      color: yellow;
+    }
+    .video-section {
+      padding: 20px;
+      color: white;
+      text-align: center;
+    }
+    iframe {
+      width: 80%;
+      height: 315px;
+      margin: 10px 0;
+    }
+  </style>
+  <script>
+    window.onload = function() {
+      setTimeout(() => {
+        document.getElementById('intro').style.display = 'none';
+        document.getElementById('content').style.display = 'block';
+      }, 3000); // 3 saniye sonra siteye geçiş
+    };
+  </script>
+</head>
+<body>
+  <!-- Giriş Ekranı -->
+  <div id="intro">
+    <h1>G</h1>
+  </div>
+
+  <!-- Ana İçerik -->
+  <div id="content">
+    <nav>
+      <a href="LINK1">Tab 1</a>
+      <a href="LINK2">Tab 2</a>
+      <a href="LINK3">Tab 3</a>
+    </nav>
+
+    <div class="video-section">
+      <h2>Başlık 1</h2>
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID1" frameborder="0" allowfullscreen></iframe>
+      
+      <h2>Başlık 2</h2>
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID2" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+</body>
+</html>
